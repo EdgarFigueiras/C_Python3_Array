@@ -190,7 +190,7 @@ static PyObject* Matrix2D(PyObject* self, PyObject* args)
     f=matin->dimensions[0];
 	c=matin->dimensions[1];
 
-	//Vector of dimensions of new array
+	/*Vector of dimensions of new array*/
 	int dimensions_cout[2]={n, 3};
 
 	/* Make a new double matrix of same dims */
@@ -218,11 +218,9 @@ static PyObject* Matrix2D(PyObject* self, PyObject* args)
 		cout[i][2]= random;
 	}
 
-	//printf("%i\n", i*j );
  	free_Carrayptrs(cin);
 	free_Carrayptrs(cout);
 	return PyArray_Return(matout);
-    //return Py_BuildValue("i", Cfib(n));
 }
 
 /* ==== Operate on Matrix components  =========================
@@ -245,7 +243,7 @@ static PyObject* MatrixProb2D(PyObject* self, PyObject* args)
     f=matin->dimensions[0];
 	c=matin->dimensions[1];
 
-	//Vector of dimensions of new array
+	/*Vector of dimensions of new array*/
 	int dimensions_cout[2]={n, 4};
 
 	/* Make a new double matrix of same dims */
@@ -274,17 +272,15 @@ static PyObject* MatrixProb2D(PyObject* self, PyObject* args)
 		cout[i][3]= cin[random_pointer_x][random_pointer_y];
 	}
 
-	//printf("%i\n", i*j );
  	free_Carrayptrs(cin);
 	free_Carrayptrs(cout);
 	return PyArray_Return(matout);
-    //return Py_BuildValue("i", Cfib(n));
 }
 
 
 static PyObject* version(PyObject* self)
 {
-    return Py_BuildValue("s", "Version 1.2");
+    return Py_BuildValue("s", "Version 1.0");
 }
  
 static PyMethodDef C_array_Methods[] = {
